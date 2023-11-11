@@ -1,0 +1,48 @@
+{
+  "identity": {
+    "userId": "1941e405",
+    "ciphertext": "~01b5ffe1df46c24d0e",
+    "recno": 1030677137,
+    "legacyCiphertext": null,
+    "uid": "1640675392815476736",
+    "edcUserId": 0
+  },
+  "personUid": "1640675392815476736",
+  "name": "Dave W.",
+  "picture_url": "https://www.upwork.com/profile-portraits/c19QWHWjqGP2kCCSfLYFdP9c6pnBN_ki8jyvFI_gcAFXYeNBtZCFuTXrl90lM1U9-a",
+  "title": "Software engineer",
+  "availability": {
+    "availabilityTs": null,
+    "source": "profile_ui",
+    "uid": "1662992780382904320",
+    "personUid": "1640675392815476736",
+    "capacity": {
+      "nid": "fullTime",
+      "name": "More than 30 hrs/week"
+    },
+    "creationTs": "2023-05-29T01:22:30Z",
+    "minHours": null,
+    "maxHours": null,
+    "availableDays": null
+  },
+  "employment_type": {
+    "nid": "fullTime",
+    "name": "More than 30 hrs/week"
+  },
+  "offers": 0,
+  "skills": [
+    "google-closure",
+    "spock"
+  ],
+  "jobCategories": [
+    {
+      "name": "Web Development",
+      "groupName": "Web, Mobile & Software Dev"
+    }
+  ],
+  "interviews": 0,
+  "activeProposals": 0,
+  "contractToHire": false,
+  "visibility": "public",
+  "locked": false
+}
