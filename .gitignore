@@ -1,6 +1,21 @@
-__pycache__/
-.ruff_cache/
-
+# IDEs, OS specific
+.DS_Store
 .vscode/
+.idea/
 
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Linters, formatters cache
+.ruff_cache/
+.mypy_cache/
+
+# Environments, Secret stuff
+.env
+
+# -------------------- Project dirs --------------------------
 sandbox/
+auth.json
+results/
