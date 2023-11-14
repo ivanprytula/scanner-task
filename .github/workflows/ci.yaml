@@ -13,8 +13,23 @@ concurrency:
 jobs:
   lint:
     runs-on: ubuntu-latest
+
     steps:
       - uses: actions/checkout@v3
-      - uses: chartboost/ruff-action@v1
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v4
         with:
-          args: --check .
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install poetry
+          poetry install
+
+      - name: Lint with Ruff
+        run: poetry run ruff format --check .
+
+      - name: Type-check with mypy
+        run: poetry run mypy .
