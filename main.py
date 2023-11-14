@@ -76,8 +76,8 @@ def run(playwright: Playwright) -> None:
     # Create a new page in a pristine context
     page = context.new_page()
 
-    profile_fwh_details = None
-    completeness_pci_details = None
+    profile_fwh_details = {}
+    completeness_pci_details = {}
 
     def get_targeted_resp(response):
         if response.request.url == UPWORK_API_V1["profile_me_fwh"]:
@@ -167,7 +167,7 @@ def run(playwright: Playwright) -> None:
     # 3. Parse HTML page with BeautifulSoup / Parcel
 
     # Alias for better readability
-    fwh = profile_fwh_details
+    fwh: dict = profile_fwh_details
     results_level_1_data_fwh = {
         "id": fwh.get("identity").get("uid") or fwh.get("personUid"),
         "job_title": fwh.get("title"),
@@ -202,7 +202,7 @@ def run(playwright: Playwright) -> None:
 
     # ------------------- Task Level 2 -------------------
 
-    def handle_device_reauth(page):
+    def handle_device_reauth(page) -> None:
         try:
             expect(page.get_by_role("heading", name="Device authorization")).to_be_visible()
             # page.locator("#deviceAuth_remember").set_checked(True)
@@ -213,7 +213,7 @@ def run(playwright: Playwright) -> None:
             logger.debug("'Device authorization' step was not displayed")
             pass
 
-    def handle_re_enter_password(page):
+    def handle_re_enter_password(page) -> None:
         try:
             expect(page.get_by_role("heading", name="Re-enter password")).to_be_visible()
             page.get_by_label("Password").fill(PASSWORD)
