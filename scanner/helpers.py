@@ -10,7 +10,7 @@ def create_directory_with_file(directory_name: str, file_name: str) -> Path:
     return file_path
 
 
-def convert_iso_to_date_string(iso_string: str) -> str:
+def convert_iso_to_date_string(iso_string: str) -> str | None:
     """
     Convert an ISO string to a date string.
 
@@ -37,7 +37,7 @@ def convert_iso_to_date_string(iso_string: str) -> str:
 def get_pay_cycle(schedule_info: dict) -> str | None:
     schedule_key = schedule_info["schedule"]
 
-    pay_cycle_label = next(
+    pay_cycle_label: str = next(
         (item["label"] for item in schedule_info["schedulesList"] if item["key"] == schedule_key),
         None,
     )
