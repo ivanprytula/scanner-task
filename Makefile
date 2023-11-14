@@ -16,6 +16,9 @@ endif
 # To mitigate this, we use `-` symbol to prefix the command or, if it's possible, add extra options to them
 # -------------------------------------------------------------------------------------------------------------
 
+scanner-go:
+	$(PREFIX) python main.py
+
 lint-check:
 	$(PREFIX) ruff check --exit-zero .
 
@@ -28,10 +31,6 @@ fmt-check:
 fmt-fix:
 	-$(PREFIX) ruff format .
 
-basics:
-	$(PREFIX) python basics.py
-
-
 play-codegen:
 	poetry run playwright install
 	poetry run playwright codegen https://www.upwork.com/ab/account-security/login
@@ -41,6 +40,7 @@ codegen-upwork-login-save-auth:
 
 codegen-upwork-reuse-auth:
 	poetry run playwright codegen --load-storage=auth.json https://www.upwork.com/ab/account-security/login
+
 
 # --------------------------------------------------------------------------------------
 # Project's commands (Docker setup)
