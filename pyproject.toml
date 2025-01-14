@@ -10,7 +10,7 @@ python = "^3.11"
 httpx = {extras = ["cli"], version = "^0.25.1"}
 pydantic = "^2.4.2"
 loguru = "^0.7.2"
-tqdm = "^4.66.1"
+tqdm = "^4.66.3"
 pendulum = "^2.1.2"
 selenium = "^4.15.2"
 webdriver-manager = "^4.0.1"
